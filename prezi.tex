@@ -1,0 +1,273 @@
+\documentclass[11pt]{beamer}
+\usetheme{Warsaw}
+\usepackage[utf8]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\author{Borkovits Bendegúz}
+\title{Beamer}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{ELTE} 
+\date{2020} 
+%\subject{} 
+\begin{document}
+
+\AtBeginSection[]
+{
+\begin{frame}
+\frametitle{Tartalomjegyzék}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+%\AtBeginSubsection[]
+%{
+%\begin{frame}
+%\frametitle{Tartalomjegyzék}
+%\tableofcontents{currentsubsection}
+%\end{frame}
+%}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Alapvető tudnivalók}
+
+\subsection{Mi az a beamer?}
+
+\begin{frame}{Mi ez?}
+Lényegében egy \alert{LaTex} prezentációs eszköz.
+
+Manuális beállítások
+
+Customization over 9000!
+\end{frame}
+
+\begin{frame}{A frame}
+\begin{block}{Mi az a slide?}
+Egy frame sok  \pause
+slide-ból is felépülhet. \pause
+\end{block}
+\begin{alertblock}{Tananyag mennyisége...}
+Rendes nézetben a \alert{slide}-ok számát látjuk.
+\end{alertblock}
+
+\end{frame}
+
+\subsection{Kinézet}
+
+\begin{frame}{Kinézet}
+\begin{block}{Stílus}
+Ez a dokumentum Varsó stílusú.
+\end{block}
+
+\begin{block}{Beállítható:}
+Stílus, kódolás, nyelv, usepackage...
+\end{block}
+\end{frame}
+
+\section{Tutorial}
+
+\subsection{Kezelőfelület és usepackage}
+
+\begin{frame}{Környezet}
+Alapverzió: Texworks
+
+\begin{block}{Texmaker}
+A LaTex szerkesztője, a dokumentumokat ezen a felületen hozom létre. Rengeteg funkció és felhasználóbarát. \alert{Editor} \pause
+\end{block}
+
+\begin{alertblock}{MikTex}
+A Texmakerben létrehozott fájlok fordításáért felel. \alert{Compiler}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Első indítás}
+\begin{block}{Usepackage letöltése}
+Kell a nyelvhez, kódoláshoz, grafikához,stílushoz...
+\end{block}
+
+A legtöbb ember csak néhány megszokott usepackage-et használ.
+
+Néhány speciális funkciónak megvan a maga usepackage-e.
+\end{frame}
+
+\subsection{Frame felépítés}
+
+\begin{frame}[fragile]{Így írhatsz frame-et}
+\begin{semiverbatim}
+\\begin\{frame\}\{Környezet\}
+Alapverzió: Texworks
+
+\\begin\{block\}\{Texmaker\}
+A LaTex szerkesztője, a dokumentumokat ezen a felületen 
+hozom létre. Rengeteg funkció és felhasználóbarát.
+ \\alert\{Editor\} \\pause
+\\end\{block\}
+
+\\begin\{alertblock\}\{MikTex\}
+A Texmakerben létrehozott fájlok fordításáért felel.
+ \\alert\{Compiler\}
+\\end\{alertblock\}
+\\end\{frame\}
+\end{semiverbatim}
+\end{frame}
+
+\begin{frame}{Egyéb hasonló felépítésű parancsok}
+\label{parancsok}
+\begin{columns}
+
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\item Képbetöltés
+			\begin{itemize}
+				\item includegraphics
+				\item figure
+			\end{itemize}
+			\item Listák
+			\begin{enumerate}
+				\item itemize
+				\item enumerate
+				\item description
+			\end{enumerate}
+			\item Táblázat
+			\begin{enumerate}[I]
+				\item table
+				\item tabular
+			\end{enumerate}
+		\end{itemize}
+	\end{column}
+
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\item Block
+			\begin{itemize}
+				\item block
+				\item definition
+				\item alertblock
+				\item example
+				\item theorem, corollary, proof
+			\end{itemize}					
+			\item Egyebek
+			\begin{enumerate}[i]
+				\item centering
+				\item caption
+				\item column
+				\item semiverbatim
+			\end{enumerate}
+		\end{itemize}
+	\end{column}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Táblázat}
+	\begin{table}
+		\begin{tabular}{l | c | c | c}
+		Oktató & Kurzus & Nap & Idő \\
+		\hline \hline
+		Dávid Gyula & Még relatív & Szerda & 14:00 \\
+		\hline
+		Cserti József & Magic show & Csütörtök & 11:00 \\
+		\hline
+		Széchenyi Gábor & Műkorcsolya & Hétfő & 15:00 \\
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Tagolás}
+\begin{columns}
+
+	\begin{column}{0.5\textwidth}
+		\begin{itemize}
+			\item Tartalomjegyzék
+			\begin{itemize}
+				\item section
+				\item subsection
+			\end{itemize}
+		\end{itemize}
+	\end{column}
+
+	\begin{column}{0.5\textwidth}
+		\centering
+		\includegraphics[scale=0.75]{section.png}
+	\end{column}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Navigálás}
+\begin{block}{Hiperhivatkozás}
+Egyes framekre shortcutot készít.
+\end{block}
+\alert{Mi kell hozzá?}
+\begin{semiverbatim}
+\\label\{labelnév\}
+
+\\hyperlink\{labelnév\}\{linkcím\}
+
+\alert{vagy:}
+
+\\hyperlink\{labelnév\}\{\\beamerbutton\{linkcím\}\}
+
+\end{semiverbatim}
+\begin{example}
+\hyperlink{parancsok}{\beamerbutton{Milyen parancsokat használtam?}}
+\end{example}
+\end{frame}
+
+\begin{frame}{Videó}
+Ez egy picit komplikáltabb.
+
+Legalább egy tucat különböző módszer.
+
+\alert{Usepackage-ek}: media9, multimedia, movie15,...
+
+\alert{Parancsok}: flashmovie, includemedia, includemovie, movie,...
+
+Függhet a lejátszótól, környezettől, formátumtól,...
+\end{frame}
+
+\begin{frame}{Egyenletek}
+Például a gravitációs erő nagysága: $F=\gamma*\frac{m_1*m_2}{r^2}$
+\begin{block}{Usepackage:\alert{tikz}}
+Képletekhez jelmagyarázatot készít, más szoftverekből berakhatunk ábrákat.
+\end{block}
+\end{frame}
+
+\begin{frame}{Források (avagy URL tutorial)}
+Alapvető ismeretek:\href{https://www.overleaf.com/learn/latex/Beamer}{\beamergotobutton{https://www.overleaf.com/learn/latex/Beamer}}
+
+Tutorialok kezdőknek:\href{https://www.youtube.com/user/ShareLaTeX}{\beamergotobutton{https://www.youtube.com/user/ShareLaTeX}}
+
+Texmaker letöltése:
+\href{https://www.xm1math.net/texmaker/download.html}{\beamergotobutton{https://www.xm1math.net/texmaker/download.html}}
+
+MikTex letöltése:
+\href{https://miktex.org/download}{\beamergotobutton{https://miktex.org/download}}
+\end{frame}
+
+\section{Vélemény}
+
+\begin{frame}{Ajánlás}
+\begin{block}{Előny}
+Kezdeti nehézségek után könnyebb kezelni, mint a ppt-t.
+\end{block}
+
+\begin{alertblock}{Hátrány}
+De néhány része homályos és nem egyértelmű.
+\end{alertblock}
+
+\begin{block}{Vélemény}
+Ideális a prezentációk elkészítéséhez.
+\end{block}
+\end{frame}
+\end{document}
